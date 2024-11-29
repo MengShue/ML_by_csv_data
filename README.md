@@ -68,6 +68,81 @@ data/
 - combined_data_with_labels.xlsx: Contains the combined training data with labels.
 - Predictions: Outputs the predicted category for the test data in the terminal.
 
+## Example: EEG Experiment for Left/Right Hand Movement
+
+Imagine you are conducting an EEG experiment to classify imagined left and right hand movements:
+	1.	Data Collection:
+	•	Each subject participates in the experiment.
+	•	EEG data is collected using multiple channels while subjects imagine moving their left or right hand.
+	2.	Data Organization:
+	•	Create one subfolder per subject (e.g., Subject_1, Subject_2).
+	•	In each folder, create two .csv files:
+	•	Left.csv for left-hand movement data.
+	•	Right.csv for right-hand movement data.
+	•	Each .csv file should have:
+	•	Columns: EEG channels (e.g., Channel_1, Channel_2, …).
+	•	Rows: EEG data samples.
+	3.	Training and Prediction:
+	•	Place the training folders in the root directory.
+	•	Use a testing.csv file with new EEG samples to predict whether they correspond to left or right-hand movements.
+	•	The program will dynamically process the data, train models, and output predictions.
+
+```shell
+data/
+├── Subject_1/
+│   ├── left.csv
+│   └── right.csv
+│
+├── Subject_2/
+│   ├── left.csv
+│   └── right.csv
+│
+└── testing.csv
+```
+### EEG Data Structure
+
+|   **Channel_1**   |   **Channel_2**   |   **Channel_3**   |   **...**   |
+|:------------------:|:-----------------:|:-----------------:|:-----------:|
+| EEG Data Sample 1  | EEG Data Sample 1 | EEG Data Sample 1 |    ...      |
+| EEG Data Sample 2  | EEG Data Sample 2 | EEG Data Sample 2 |    ...      |
+| EEG Data Sample 3  | EEG Data Sample 3 | EEG Data Sample 3 |    ...      |
+|         ...         |         ...       |         ...       |    ...      |
+
+## Example: Dielectric Material Resistance Experiment
+
+In this experiment, we measure the electrical resistance of different dielectric materials under four different voltage settings. Each subfolder corresponds to a unique dielectric material, and each `.csv` file represents the data collected under a specific voltage setting.
+
+#### Data Organization:
+- **Folders**: Each folder represents a unique dielectric material resistance value.
+- **CSV Files**: Each `.csv` file corresponds to one voltage setting (e.g., `Voltage_1.csv`, `Voltage_2.csv`).
+- **Rows**: Each row represents a measurement value.
+- **Columns**: Each column represents the experimental iteration.
+
+#### Folder and File Structure:
+```plaintext
+data/
+├── Material_1/
+│   ├── Voltage_1.csv
+│   ├── Voltage_2.csv
+│   ├── Voltage_3.csv
+│   └── Voltage_4.csv
+├── Material_2/
+│   ├── Voltage_1.csv
+│   ├── Voltage_2.csv
+│   ├── Voltage_3.csv
+│   └── Voltage_4.csv
+└── ...
+```
+
+### CSV File Structure
+
+| **Experiment_1** | **Experiment_2** | **Experiment_3** |   **...**   |
+|:----------------:|:----------------:|:----------------:|:-----------:|
+|  Measurement_1   |  Measurement_1   |  Measurement_1   |    ...      |
+|  Measurement_2   |  Measurement_2   |  Measurement_2   |    ...      |
+|  Measurement_3   |  Measurement_3   |  Measurement_3   |    ...      |
+|       ...        |       ...        |       ...        |    ...      |
+
 ## Example Output
 
 - Training Data Summary:
