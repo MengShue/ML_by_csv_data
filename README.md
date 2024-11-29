@@ -71,21 +71,21 @@ data/
 ## Example: EEG Experiment for Left/Right Hand Movement
 
 Imagine you are conducting an EEG experiment to classify imagined left and right hand movements:
-	1.	Data Collection:
-	•	Each subject participates in the experiment.
-	•	EEG data is collected using multiple channels while subjects imagine moving their left or right hand.
-	2.	Data Organization:
-	•	Create one subfolder per subject (e.g., Subject_1, Subject_2).
-	•	In each folder, create two .csv files:
-	•	Left.csv for left-hand movement data.
-	•	Right.csv for right-hand movement data.
-	•	Each .csv file should have:
-	•	Columns: EEG channels (e.g., Channel_1, Channel_2, …).
-	•	Rows: EEG data samples.
-	3.	Training and Prediction:
-	•	Place the training folders in the root directory.
-	•	Use a testing.csv file with new EEG samples to predict whether they correspond to left or right-hand movements.
-	•	The program will dynamically process the data, train models, and output predictions.
+1.	Data Collection:
+- Each subject participates in the experiment.
+- EEG data is collected using multiple channels while subjects imagine moving their left or right hand.
+2.	Data Organization:
+- Create one subfolder per subject (e.g., Subject_1, Subject_2).
+- In each folder, create two .csv files:
+- Left.csv for left-hand movement data.
+- Right.csv for right-hand movement data.
+- Each .csv file should have:
+- Columns: EEG channels (e.g., Channel_1, Channel_2, …).
+- Rows: EEG data samples.
+3.	Training and Prediction:
+- Place the training folders in the root directory.
+- Use a testing.csv file with new EEG samples to predict whether they correspond to left or right-hand movements.
+- The program will dynamically process the data, train models, and output predictions.
 
 ```shell
 data/
