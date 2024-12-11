@@ -22,7 +22,7 @@ for folder_name in os.listdir(root_dir):
             file_path = os.path.join(folder_path, file_name)
             if os.path.isfile(file_path) and file_name.endswith('.csv'):  # Detect if csv file or not
                 try:
-                    df = pd.read_csv(file_path, nrows=50)  # Only read 50 lines
+                    df = pd.read_csv(file_path) # read total file, should notice OOM issue
                     label = file_name.split('.')[0]  # Use file name（extension name not included）as labels
                     sheet_name = f"{label}_Sheet{sheet_number:02d}"
                     df['label'] = label  # Add label column
@@ -90,4 +90,4 @@ test_data = pd.read_csv(test_data_path, nrows=50)
 test_pred = best_model.predict(test_data)
 reverse_label_mapping = {v: k for k, v in label_mapping.items()}
 predicted_class = reverse_label_mapping[test_pred[0]]
-print(f"testing.csv 的前 50 行預測屬於類別: {predicted_class}")
+print(f"testing.csv 的預測屬於類別: {predicted_class}")
