@@ -86,7 +86,7 @@ for name, clf in classifiers.items():
 
 # Predict testing data
 test_data_path = os.path.join(root_dir, 'testing.csv')
-test_data = pd.read_csv(test_data_path,)
+test_data = pd.read_csv(test_data_path)
 test_pred = best_model.predict(test_data)
 reverse_label_mapping = {v: k for k, v in label_mapping.items()}
 predicted_class = reverse_label_mapping[test_pred[0]]
